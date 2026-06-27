@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Who Is the Spy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <button class="sound-fab" id="soundFab" aria-label="Toggle sound">♪</button>
+
+  <main id="app">
+    <section class="screen active" id="splash">
+      <div class="splash-card">
+        <div class="logo-mark">WHO</div>
+        <h1>IS THE <span>SPY?</span></h1>
+        <p>One hidden identity. One truth to expose. Play with friends or AI.</p>
+        <button class="primary-btn huge" id="enterBtn"><span>BEGIN</span><b>→</b></button>
+        <div class="splash-foot">
+          <span class="tag">PASS &amp; PLAY</span>
+          <span class="tag">4–7 PLAYERS</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="setup">
+      <nav class="topbar">
+        <button class="brand text-btn" data-go="splash">WHO<span>?</span></button>
+        <span class="step-tag">MENU</span>
+      </nav>
+      <div class="panel-wrap">
+        <div class="setup-copy">
+          <div class="eyebrow left"><i></i> Choose the room</div>
+          <h2>Configure the <em>who is the spy</em> game</h2>
+          <p>Pick the number of players, choose friends or AI, then name every suspect.</p>
+        </div>
+
+        <div class="setup-card">
+          <div class="setting-block">
+            <div class="label-row">
+              <label>PLAYER COUNT</label>
+              <strong><span id="playerCount">4</span> PLAYERS</strong>
+            </div>
+            <div class="count-picker">
+              <button id="minusCount">−</button>
+              <div class="count-dots" id="countDots"></div>
+              <button id="plusCount">+</button>
+            </div>
+            <small>Minimum 4 · Maximum 7</small>
+          </div>
+
+          <div class="setting-block">
+            <div class="label-row"><label>GAME MODE</label></div>
+            <div class="option-grid">
+              <button class="option active" id="modeHuman">With People</button>
+              <button class="option" id="modeAI">With AI</button>
+            </div>
+          </div>
+
+          <div class="setting-block" id="aiLevelBlock">
+            <div class="label-row"><label>AI LEVEL</label></div>
+            <div class="option-grid">
+              <button class="option active" data-level="easy">Easy</button>
+              <button class="option" data-level="medium">Medium</button>
+              <button class="option" data-level="hard">Hard</button>
+            </div>
+            <small>AI players will join the room and shape the investigation.</small>
+          </div>
+
+          <div class="setting-block">
+            <div class="label-row"><label>PLAYER NAMES</label></div>
+            <div class="names-grid" id="namesGrid"></div>
+            <small>Every name must be unique. Leave AI names blank to auto-fill.</small>
+          </div>
+
+          <button class="primary-btn wide" id="startGameBtn"><span>START THE GAME</span><b>→</b></button>
+        </div>
+      </div>
+      <div class="page-index">01 <span>/</span> 03</div>
+    </section>
+
+    <section class="screen" id="game">
+      <nav class="topbar">
+        <button class="brand text-btn" data-go="splash">WHO<span>?</span></button>
+        <button class="quit-btn" id="quitBtn">QUIT</button>
+      </nav>
+      <div class="game-shell">
+        <div class="progress-line"><i id="progressFill"></i></div>
+        <div id="gameContent"></div>
+      </div>
+      <div class="page-index">02 <span>/</span> 03</div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
